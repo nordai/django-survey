@@ -1,6 +1,9 @@
-<input id="id_{{ name }}" name="{{ name }}" type="hidden" value=""/>
-{% for choice in choices %}
-	<a href="#" onclick="setResponse('id_{{ name }}', '{{ choice.full_value }}');">
-		<img id="img_{{ name }}_{{ choice.index }}" src="{{ choice.img_src }}"/>
-	</a>
+<input id="id_{{ widget.name }}" name="{{ widget.name }}" type="hidden" value=" {{ widget.value }}"/>
+{% for choice in widget.choices %}
+     <p>
+     <label onclick="setResponse('id_{{ widget.name }}', '{{ choice.value }}');">
+	 <input type="radio" id="radio_{{ widget.name }}_{{ choice.index }}" name="imageSelectWidget" value="{{ choice.value }}" {% if widget.value == choice.value %} checked {% endif %}>
+     <img style="cursor:pointer" id="img_{{ widget.name }}_{{ choice.index }}" src="{{ choice.img_src }}"/>
+     <span>{{ choice.title }}</span>
+	 </label></p>
 {% endfor %}

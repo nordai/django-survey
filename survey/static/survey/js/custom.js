@@ -5,3 +5,7 @@ $(document).ready(function () {
     dateInputFields.flatpickr();
   }
 });
+
+function setResponse(id, value) {
+  $('#'+id).val(value);
+}
